@@ -1,10 +1,11 @@
 ---
+import BrandLogo from './BrandLogo.astro';
 import { navigation } from '../data/site';
 import { withBase } from '../utils/paths';
 ---
 <header class="site-header">
   <div class="page-width header-inner">
-    <a class="brand" href={withBase()} aria-label="My Bloom Box home">MY BLOOM BOX<span aria-hidden="true">✳</span></a>
+    <BrandLogo />
     <nav class="desktop-nav" aria-label="Primary navigation">
       {navigation.map((link) => <a href={link.href}>{link.label}</a>)}
     </nav>

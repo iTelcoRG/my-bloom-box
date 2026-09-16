@@ -1,0 +1,9 @@
+---
+import { withBase } from '../utils/paths';
+---
+<a class="brand" href={withBase()} aria-label="My Bloom Box home">
+  <!-- Crop the transparent margins in the viewport; preserve the supplied artwork. -->
+  <svg viewBox="260 558 1430 255" width="240" height="43" aria-hidden="true" focusable="false">
+    <image href={withBase('images/my-bloom-box-logo.png')} width="2000" height="1414" />
+  </svg>
+</a>

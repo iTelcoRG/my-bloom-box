@@ -42,8 +42,8 @@ em { font-weight: 400; color: var(--ink); }
 .announcement { padding: 9px 20px; background: var(--blush-2); color: var(--ink); font-size: .8rem; text-align: center; }
 .site-header { position: sticky; top: 0; z-index: 30; background: var(--header-surface); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .header-inner { min-height: 86px; display: flex; justify-content: space-between; align-items: center; gap: 22px; }
-.brand { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .12em; white-space: nowrap; min-height: 44px; }
-.brand span { color: var(--pink); font-size: 1.8rem; }
+.brand { display: inline-flex; align-items: center; width: 240px; flex-shrink: 0; min-height: 44px; }
+.brand svg { display: block; width: 100%; height: auto; overflow: hidden; }
 .desktop-nav { display: flex; gap: 26px; align-items: center; }
 .desktop-nav a, .cart-link { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
 .desktop-nav a:hover, .site-footer a:hover { text-decoration: underline; text-underline-offset: 6px; }
@@ -113,7 +113,7 @@ em { font-weight: 400; color: var(--ink); }
 .future-page h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
 @media (max-width: 1000px) {
   .desktop-nav { gap: 16px; }
-  .brand { font-size: 1rem; }
+  .brand { width: 200px; }
   .hero-grid { gap: 32px; min-height: auto; }
   .placeholder-hero { height: 520px; }
   .split { gap: 36px; }
@@ -151,7 +151,7 @@ em { font-weight: 400; color: var(--ink); }
   .page-width { padding-inline: 20px; }
   .section { padding-block: 52px; }
   .announcement { font-size: .72rem; padding: 9px 22px; }
-  .brand { font-size: .9rem; letter-spacing: .08em; gap: 6px; }
+  .brand { width: clamp(130px, 40vw, 160px); }
   .brand span { font-size: 1.4rem; }
   .header-inner { gap: 10px; }
   .header-actions { gap: 14px; }
