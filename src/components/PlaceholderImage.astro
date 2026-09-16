@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../utils/paths';
 interface Props { kind: 'hero' | 'product' | 'story'; label: string; eager?: boolean }
 const { kind, label, eager = false } = Astro.props;
 const descriptions = {
@@ -8,6 +9,6 @@ const descriptions = {
 };
 ---
 <figure class:list={['placeholder-image', `placeholder-${kind}`]}>
-  <img src={`/images/${kind}-placeholder.svg`} alt={descriptions[kind]} width="640" height="680" loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} />
+  <img src={withBase(`images/${kind}-placeholder.svg`)} alt={descriptions[kind]} width="640" height="680" loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} />
   <figcaption>{label} · Placeholder illustration</figcaption>
 </figure>

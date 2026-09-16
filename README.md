@@ -4,12 +4,25 @@ Static Astro homepage and shared site shell, based on the supplied Shopify theme
 
 ## Local review
 
-Run `npm install`, then `npm run dev`. Open http://localhost:4321.
+Run `npm install`, then `npm run dev`. Open the local server URL shown by Astro with `/my-bloom-box/` appended. The configured base applies to local development and preview too.
 On Windows where PowerShell blocks npm.ps1, use `npm.cmd` instead of `npm`.
 
 ## Checks and deployment
 
-Run `npm run check` and `npm run build`. Upload the **contents** of `dist/` to cPanel `public_html`. No Node runtime is needed on the server. `npm run preview` serves the built output locally.
+Run `npm run check` and `npm run build`. `npm run preview` serves the built output locally under `/my-bloom-box/`.
+
+### GitHub Pages preview
+
+`astro.config.mjs` sets `site: 'https://itelcorg.github.io'`, `base: '/my-bloom-box'` and `output: 'static'`.
+The expected public URL is https://itelcorg.github.io/my-bloom-box/.
+
+In the repository's **Settings > Pages**, set **Source** to **GitHub Actions**. After review, commit and push to `main`; `.github/workflows/deploy.yml` will install dependencies, run checks, build/upload with `withastro/action@v6`, and deploy with `actions/deploy-pages@v5`. It uses `actions/checkout@v6`, Node 24, the required Pages permissions, and cancels superseded workflow runs. Manual runs are available through **Actions > Deploy to GitHub Pages > Run workflow** once the workflow is on the default branch. Repository Actions policies must allow the referenced actions.
+
+### Future cPanel deployment
+
+For a domain-root cPanel deployment, change `site` in `astro.config.mjs` to the actual production origin and change `base` to `'/'` (or remove `base`). Then run `npm run build` and upload the **contents** of `dist/` to `public_html`. Rebuild for that target: the GitHub Pages build contains `/my-bloom-box/` asset paths and should not be uploaded unchanged to the domain root.
+
+No Node runtime is needed on cPanel. There are no hosting adapters or runtime services. `src/utils/paths.ts` uses Astro's `import.meta.env.BASE_URL` for internal page/public asset paths, so only the configuration needs to change between hosting targets. Same-page fragment links remain relative; Astro handles the imported CSS and bundled scripts automatically.
 
 ## Editing
 

@@ -1,3 +1,5 @@
+import { withBase } from '../utils/paths';
+
 // Draft editorial content. Replace placeholders before publishing.
 export const site = {
   name: 'My Bloom Box',
@@ -6,11 +8,11 @@ export const site = {
 };
 
 export const navigation = [
-  { label: 'Shop', href: '/#shop' },
-  { label: 'Our Story', href: '/#our-story' },
-  { label: 'Bloomie', href: '/bloomie/' },
-  { label: 'FAQ', href: '/faq/' },
-  { label: 'Contact', href: '/contact/' },
+  { label: 'Shop', href: withBase('#shop') },
+  { label: 'Our Story', href: withBase('#our-story') },
+  { label: 'Bloomie', href: withBase('bloomie/') },
+  { label: 'FAQ', href: withBase('faq/') },
+  { label: 'Contact', href: withBase('contact/') },
 ];
 
 export const product = {
