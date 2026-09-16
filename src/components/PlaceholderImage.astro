@@ -1,0 +1,13 @@
+---
+interface Props { kind: 'hero' | 'product' | 'story'; label: string; eager?: boolean }
+const { kind, label, eager = false } = Astro.props;
+const descriptions = {
+  hero: 'Placeholder illustration of a pink gift box and a flower in a sunlit blush setting.',
+  product: 'Placeholder illustration of a ribbon-wrapped Bloom Box; final packaging and contents may differ.',
+  story: 'Placeholder illustration of two flowers growing together in a vase.',
+};
+---
+<figure class:list={['placeholder-image', `placeholder-${kind}`]}>
+  <img src={`/images/${kind}-placeholder.svg`} alt={descriptions[kind]} width="640" height="680" loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} />
+  <figcaption>{label} · Placeholder illustration</figcaption>
+</figure>

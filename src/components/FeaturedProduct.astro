@@ -1,0 +1,16 @@
+---
+import { product } from '../data/site';
+import PlaceholderImage from './PlaceholderImage.astro';
+---
+<section id="shop" class="section featured" aria-labelledby="featured-title"><div class="page-width">
+  <h2 id="featured-title" class="section-title">A meaningful gift<br /><em>she’ll treasure.</em></h2>
+  <div class="split product-panel">
+    <PlaceholderImage kind="product" label="Product photography to come" />
+    <div class="product-copy"><h3>{product.name}</h3><p class="lead">{product.description}</p>
+      <ul class="product-list">{product.contents.map((item) => <li><span aria-hidden="true">♡</span>{item}</li>)}</ul>
+      <p class="availability">{product.availability}</p>
+      <a class="button button--secondary" href="#newsletter">Keep me in the loop <span aria-hidden="true">↗</span></a>
+      <p class="small-note">A preview of what’s to come. Shopping opens soon.</p>
+    </div>
+  </div>
+</div></section>

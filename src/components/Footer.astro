@@ -1,0 +1,9 @@
+---
+import { navigation, site } from '../data/site';
+---
+<footer class="site-footer"><div class="page-width">
+  <div class="footer-grid"><div class="footer-about"><a class="brand" href="/">MY BLOOM BOX <span aria-hidden="true">✳</span></a><h2>A beautiful beginning<br />to a new chapter.</h2><p>Thoughtful gifts, gentle guidance and meaningful keepsakes for a first period.</p></div>
+    <nav aria-label="Footer navigation"><h3>Explore</h3><ul>{navigation.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul></nav>
+    <nav aria-label="Legal"><h3>The details</h3><ul><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul><p class="footer-note">Made for her, with love.</p></nav>
+  </div><div class="copyright">{site.copyright}</div>
+</div></footer>

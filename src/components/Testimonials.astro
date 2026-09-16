@@ -1,0 +1,8 @@
+---
+import { testimonials } from '../data/site';
+---
+<section class="section testimonials" aria-labelledby="testimonials-title"><div class="page-width">
+  <h2 id="testimonials-title" class="section-title">Loved by girls.<br /><em>And the people who love them.</em></h2>
+  <p class="section-intro">Illustrative quotes for this preview. Real customer stories are coming soon.</p>
+  <div class="card-grid">{testimonials.map((item) => <figure class="soft-card testimonial-card"><span class="quote-mark" aria-hidden="true">“</span><blockquote>{item.quote}</blockquote><figcaption>— {item.name}</figcaption></figure>)}</div>
+</div></section>

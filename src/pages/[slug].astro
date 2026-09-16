@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { futurePages } from '../data/site';
+export function getStaticPaths() {
+  return futurePages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+---
+<SiteLayout title={`${page.title} — My Bloom Box`}><section class="section future-page page-width"><p class="availability">Coming soon</p><h1>{page.title}</h1><p class="lead">{page.text}</p><a class="button button--secondary" href="/">Back to the homepage</a></section></SiteLayout>

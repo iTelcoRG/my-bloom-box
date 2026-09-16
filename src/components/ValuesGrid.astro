@@ -1,0 +1,10 @@
+---
+const values = [
+  { icon: '♡', title: 'Celebrate', text: 'Turn an uncertain moment into a memory filled with love and pride.' },
+  { icon: 'i', title: 'Educate', text: 'Offer gentle, age-appropriate guidance for this new chapter.' },
+  { icon: '☁', title: 'Comfort', text: 'Bring reassurance through thoughtful essentials and keepsakes.' },
+];
+---
+<section class="section values-section" aria-label="Care in every detail"><div class="page-width card-grid">
+  {values.map((value) => <article class="soft-card value-card"><div class="drop" aria-hidden="true"><span>{value.icon}</span></div><div><h2>{value.title}</h2><p>{value.text}</p></div></article>)}
+</div></section>
